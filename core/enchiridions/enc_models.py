@@ -1,35 +1,36 @@
+# coding=utf-8
 from django.db import models
 from ..choices import MATERIAL_SUPPLIES_GROUP_CHOICE, POSITION_CATEGORY_CHOICE, YEAR_CHOICES, OS_GROUP
 
 
 class PositionModel(models.Model):
-    name = models.CharField(max_length=50)
-    category = models.CharField(choices=POSITION_CATEGORY_CHOICE)
-    salary = models.IntegerField(default=0)
-    year = models.IntegerField(max_length=4, choices=YEAR_CHOICES)
+    name = models.CharField(u'Наименование должности', max_length=50)
+    category = models.CharField(u'Категория должности', choices=POSITION_CATEGORY_CHOICE)
+    salary = models.IntegerField(u'Заработная плата', default=0)
+    year = models.IntegerField(u'Год', max_length=4, choices=YEAR_CHOICES)
 
 
-class MedicalSupplies(models.Model):
-    name = models.CharField(max_length=100)
-    supply_unit = models.CharField(max_length=50)  # TYPE
-    write_off_unit = models.CharField(max_length=50)  # TYPE
-    count = models.IntegerField()
-    material_group = models.CharField(choices=MATERIAL_SUPPLIES_GROUP_CHOICE)
+class MedicalSuppliesModel(models.Model):
+    name = models.CharField(u'Наименование', max_length=100)
+    supply_unit = models.CharField(u'Едининица поставки', max_length=50)  # TYPE
+    write_off_unit = models.CharField(u'Единица списания (минимальная)', max_length=50)  # TYPE
+    count = models.IntegerField(u'Количество в удинице поставки')
+    material_group = models.CharField(u'Группа материальных запасов', choices=MATERIAL_SUPPLIES_GROUP_CHOICE)
 
 
-class MainCure(models.Model):
-    name = models.CharField(max_length=100)
-    os_group = models.CharField(choices=OS_GROUP)
-    good_using_time_start = models.DateTimeField()
-    good_using_time_end = models.DateTimeField()
+class MainCureModel(models.Model):
+    name = models.CharField(u'Наименование основного средства', max_length=100)
+    os_group = models.CharField(u'Группа ОС', choices=OS_GROUP)
+    good_using_time_start = models.DateTimeField(u'Начало срока полезного действия')
+    good_using_time_end = models.DateTimeField(u'Окончание срока полезного действия')
 
 
-class Drugs(models.Model):
-    ath_classification = models.CharField(max_length=100)   # TYPE
-    mnn = models.IntegerField()   # TYPE
-    commercial_name = models.CharField(max_length=100)
-    supply_unit = models.CharField(max_length=100)  # TYPE
-    write_off_unit = models.CharField(max_length=100)   # TYPE
-    count_edpost = models.IntegerField(default=0)   # TYPE
-    count_active_sub = models.IntegerField(default=0)   # TYPE
-    farm_group = models.IntegerField(default=0) # TYPE
+class DrugsModel(models.Model):
+    ath_classification = models.CharField(u'АТХ-классификация', max_length=100)   # TYPE
+    mnn = models.IntegerField(u'МНН')   # TYPE
+    commercial_name = models.CharField(u'Торговое наименование', max_length=100)
+    supply_unit = models.CharField(u'Единица поставки ЕДпост', max_length=100)  # TYPE
+    write_off_unit = models.CharField(u'Единица списания (минимальная) ЕДмин', max_length=100)   # TYPE
+    count_edpost = models.IntegerField(u'Количество в ЕДпост', default=0)   # TYPE
+    count_active_sub = models.IntegerField(u'Количество ДействВещ в ЕДмин', default=0)   # TYPE
+    farm_group = models.IntegerField(u'Фармокологическая группа', default=0)     # TYPE
