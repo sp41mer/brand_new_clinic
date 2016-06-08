@@ -1,7 +1,6 @@
 from django.contrib import admin
-from core.models import *
+from core.models import Service, NutritionalCare, TreatmentDescriptionModel
 
-admin.site.register(PositionModel)
-admin.site.register(MedicalSuppliesModel)
-admin.site.register(MainCureModel)
-admin.site.register(DrugsModel)
+admin.site.register(Service)
+admin.site.register(NutritionalCare)
+admin.site.register(TreatmentDescriptionModel)

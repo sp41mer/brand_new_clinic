@@ -1,13 +1,14 @@
 # coding=utf-8
 from django.db import models
-from ..choices import MATERIAL_SUPPLIES_GROUP_CHOICE, POSITION_CATEGORY_CHOICE, YEAR_CHOICES, OS_GROUP
+
+from brand_new_clinic.choices import MATERIAL_SUPPLIES_GROUP_CHOICE, POSITION_CATEGORY_CHOICE, YEAR_CHOICES, OS_GROUP
 
 
 class PositionModel(models.Model):
     name = models.CharField(u'Наименование должности', max_length=50)
-    category = models.CharField(u'Категория должности', choices=POSITION_CATEGORY_CHOICE)
+    category = models.CharField(u'Категория должности', choices=POSITION_CATEGORY_CHOICE, max_length=15)
     salary = models.IntegerField(u'Заработная плата', default=0)
-    year = models.IntegerField(u'Год', max_length=4, choices=YEAR_CHOICES)
+    year = models.IntegerField(u'Год', choices=YEAR_CHOICES)
 
 
 class MedicalSuppliesModel(models.Model):
@@ -15,12 +16,12 @@ class MedicalSuppliesModel(models.Model):
     supply_unit = models.CharField(u'Едининица поставки', max_length=50)  # TYPE
     write_off_unit = models.CharField(u'Единица списания (минимальная)', max_length=50)  # TYPE
     count = models.IntegerField(u'Количество в удинице поставки')
-    material_group = models.CharField(u'Группа материальных запасов', choices=MATERIAL_SUPPLIES_GROUP_CHOICE)
+    material_group = models.IntegerField(u'Группа материальных запасов', choices=MATERIAL_SUPPLIES_GROUP_CHOICE)
 
 
 class MainCureModel(models.Model):
     name = models.CharField(u'Наименование основного средства', max_length=100)
-    os_group = models.CharField(u'Группа ОС', choices=OS_GROUP)
+    os_group = models.CharField(u'Группа ОС', choices=OS_GROUP, max_length=100)
     good_using_time_start = models.DateTimeField(u'Начало срока полезного действия')
     good_using_time_end = models.DateTimeField(u'Окончание срока полезного действия')
 
