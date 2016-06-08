@@ -1,4 +1,5 @@
 # coding=utf-8
+import datetime
 
 MATERIAL_SUPPLIES_GROUP_CHOICE = (
     (1, u'Медицинский инструментарий'),
@@ -37,3 +38,5 @@ SERVICE_TYPE_CHOICE = (
     ('procedure', u'Хирургические, эндоноскопические, эндоваскулярные и другие методы, требующие анестезиологического и/или реаниматологического сопровождения'),
     ('observation', u'Наблюдение и уход за пациентом медицинскими работниками со средним профессиональным образованием'),
 )
+
+YEAR_CHOICES = [(year, year) for year in range(2000, (datetime.datetime.now().year+1))]
