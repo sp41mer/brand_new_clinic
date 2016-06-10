@@ -10,6 +10,10 @@ class PositionModel(models.Model):
     salary = models.IntegerField(u'Заработная плата', default=0)
     year = models.IntegerField(u'Год', choices=YEAR_CHOICES)
 
+    class Meta:
+        verbose_name = u'Справочник "Должности"'
+        verbose_name_plural = u'Справочники "Должности"'
+
 
 class MedicalSuppliesModel(models.Model):
     name = models.CharField(u'Наименование', max_length=100)
@@ -18,12 +22,20 @@ class MedicalSuppliesModel(models.Model):
     count = models.IntegerField(u'Количество в удинице поставки')
     material_group = models.IntegerField(u'Группа материальных запасов', choices=MATERIAL_SUPPLIES_GROUP_CHOICE)
 
+    class Meta:
+        verbose_name = u'Справочник "Медицинские запасы"'
+        verbose_name_plural = u'Справочники "Медицинские запасы"'
+
 
 class MainCureModel(models.Model):
     name = models.CharField(u'Наименование основного средства', max_length=100)
     os_group = models.CharField(u'Группа ОС', choices=OS_GROUP, max_length=100)
     good_using_time_start = models.DateTimeField(u'Начало срока полезного действия')
     good_using_time_end = models.DateTimeField(u'Окончание срока полезного действия')
+
+    class Meta:
+        verbose_name = u'Справочник "Основные средства"'
+        verbose_name_plural = u'Справочники "Основные средства"'
 
 
 class DrugsModel(models.Model):
@@ -35,3 +47,7 @@ class DrugsModel(models.Model):
     count_edpost = models.IntegerField(u'Количество в ЕДпост', default=0)   # TYPE
     count_active_sub = models.IntegerField(u'Количество ДействВещ в ЕДмин', default=0)   # TYPE
     farm_group = models.IntegerField(u'Фармокологическая группа', default=0)     # TYPE
+
+    class Meta:
+        verbose_name = u'Справочник "Лекартственные средства"'
+        verbose_name_plural = u'Справочники "Лекартственные средства"'
