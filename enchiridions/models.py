@@ -14,6 +14,9 @@ class PositionModel(models.Model):
         verbose_name = u'Справочник "Должности"'
         verbose_name_plural = u'Справочники "Должности"'
 
+    def __unicode__(self):
+        return "{}".format(self.name)
+
 
 class MedicalSuppliesModel(models.Model):
     name = models.CharField(u'Наименование', max_length=100)
@@ -26,6 +29,9 @@ class MedicalSuppliesModel(models.Model):
         verbose_name = u'Справочник "Медицинские запасы"'
         verbose_name_plural = u'Справочники "Медицинские запасы"'
 
+    def __unicode__(self):
+        return "{}".format(self.name)
+
 
 class MainCureModel(models.Model):
     name = models.CharField(u'Наименование основного средства', max_length=100)
@@ -36,6 +42,9 @@ class MainCureModel(models.Model):
     class Meta:
         verbose_name = u'Справочник "Основные средства"'
         verbose_name_plural = u'Справочники "Основные средства"'
+
+    def __unicode__(self):
+        return "{}".format(self.name)
 
 
 class DrugsModel(models.Model):
@@ -51,3 +60,6 @@ class DrugsModel(models.Model):
     class Meta:
         verbose_name = u'Справочник "Лекартственные средства"'
         verbose_name_plural = u'Справочники "Лекартственные средства"'
+
+    def __unicode__(self):
+        return "{}".format(self.commercial_name)

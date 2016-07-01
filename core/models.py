@@ -15,6 +15,9 @@ class Service(models.Model):
         verbose_name = u'Список услуг'
         verbose_name_plural = u'Списки услуг'
 
+    def __unicode__(self):
+        return "{}".format(self.service)
+
 
 class NutritionalCare(models.Model):
     name = models.CharField(u'Наименование', max_length=50)
@@ -24,6 +27,9 @@ class NutritionalCare(models.Model):
     class Meta:
         verbose_name = u'Вид лечебного питаня'
         verbose_name_plural = u'Виды лечебного питания'
+
+    def __unicode__(self):
+        return "{}".format(self.name)
 
 
 class TreatmentDescriptionModel(models.Model):
@@ -46,3 +52,6 @@ class TreatmentDescriptionModel(models.Model):
     class Meta:
         verbose_name = u'Метод лечения'
         verbose_name_plural = u'Методы лечения'
+
+    def __unicode__(self):
+        return "{}".format(self.section)
