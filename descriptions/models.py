@@ -14,6 +14,9 @@ class WorkDescriptionModel(models.Model):
         verbose_name = u'Описание работы всех сотрудников'
         verbose_name_plural = u'Описания работы всех сотрудников'
 
+    def __unicode__(self):
+        return "{}".format(self.name)
+
 
 class EquipmentDescriptionModel(models.Model):
     cure = models.ForeignKey(MainCureModel, verbose_name=u'Основное средство')
@@ -24,6 +27,9 @@ class EquipmentDescriptionModel(models.Model):
     class Meta:
         verbose_name = u'Описание оборудования'
         verbose_name_plural = u'Описания оборудования'
+
+    def __unicode__(self):
+        return "{}".format(self.name)
 
 
 class SuppliesDescriptionModel(models.Model):
@@ -36,6 +42,9 @@ class SuppliesDescriptionModel(models.Model):
         verbose_name = u'Описание материальных запасов'
         verbose_name_plural = u'Описания материальных запасов'
 
+    def __unicode__(self):
+        return "{}".format(self.name)
+
 
 class DrugsDescription(models.Model):
     drug = models.ForeignKey(DrugsModel, verbose_name=u'Лекартвенное средство')
@@ -45,6 +54,9 @@ class DrugsDescription(models.Model):
     class Meta:
         verbose_name = u'Описание лекрственных средств'
         verbose_name_plural = u'Описания лекрственных средств'
+
+    def __unicode__(self):
+        return "{}".format(self.name)
 
 
 class MethodDrugsDescription(models.Model):
@@ -59,6 +71,9 @@ class MethodDrugsDescription(models.Model):
         verbose_name = u'Описание применения лекрственных средств'
         verbose_name_plural = u'Описания применения лекрственных средств'
 
+    def __unicode__(self):
+        return "{}".format(self.name)
+
 
 class ServiceDescription(models.Model):
     type = models.CharField(u'Вид услуги', choices=SERVICE_TYPE_CHOICE, max_length=15)
@@ -72,3 +87,6 @@ class ServiceDescription(models.Model):
     class Meta:
         verbose_name = u'Описание услуги'
         verbose_name_plural = u'Описаня услуги'
+
+    def __unicode__(self):
+        return "{}".format(self.name)
