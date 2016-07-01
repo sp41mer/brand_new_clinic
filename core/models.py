@@ -16,7 +16,7 @@ class Service(models.Model):
         verbose_name_plural = u'Списки услуг'
 
     def __unicode__(self):
-        return "{}".format(self.service)
+        return u"{}".format(self.service)
 
 
 class NutritionalCare(models.Model):
@@ -29,7 +29,7 @@ class NutritionalCare(models.Model):
         verbose_name_plural = u'Виды лечебного питания'
 
     def __unicode__(self):
-        return "{}".format(self.name)
+        return u"{}".format(self.name)
 
 
 class TreatmentDescriptionModel(models.Model):
@@ -54,4 +54,4 @@ class TreatmentDescriptionModel(models.Model):
         verbose_name_plural = u'Методы лечения'
 
     def __unicode__(self):
-        return "{}".format(self.section)
+        return u"{}".format(self.section)

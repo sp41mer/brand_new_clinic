@@ -15,7 +15,7 @@ class WorkDescriptionModel(models.Model):
         verbose_name_plural = u'Описания работы всех сотрудников'
 
     def __unicode__(self):
-        return "{}".format(self.position)
+        return u"{}".format(self.position)
 
 
 class EquipmentDescriptionModel(models.Model):
@@ -29,7 +29,7 @@ class EquipmentDescriptionModel(models.Model):
         verbose_name_plural = u'Описания оборудования'
 
     def __unicode__(self):
-        return "{}".format(self.cure)
+        return u"{}".format(self.cure)
 
 
 class SuppliesDescriptionModel(models.Model):
@@ -43,7 +43,7 @@ class SuppliesDescriptionModel(models.Model):
         verbose_name_plural = u'Описания материальных запасов'
 
     def __unicode__(self):
-        return "{}".format(self.supplies)
+        return u"{}".format(self.supplies)
 
 
 class DrugsDescription(models.Model):
@@ -56,7 +56,7 @@ class DrugsDescription(models.Model):
         verbose_name_plural = u'Описания лекрственных средств'
 
     def __unicode__(self):
-        return "{}".format(self.drug)
+        return u"{}".format(self.drug)
 
 
 class MethodDrugsDescription(models.Model):
@@ -72,7 +72,7 @@ class MethodDrugsDescription(models.Model):
         verbose_name_plural = u'Описания применения лекрственных средств'
 
     def __unicode__(self):
-        return "{}".format(self.drug)
+        return u"{}".format(self.drug)
 
 
 class ServiceDescription(models.Model):
@@ -89,4 +89,4 @@ class ServiceDescription(models.Model):
         verbose_name_plural = u'Описаня услуги'
 
     def __unicode__(self):
-        return "{}".format(self.type)
+        return u"{}".format(self.type)

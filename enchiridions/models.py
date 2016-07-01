@@ -15,7 +15,7 @@ class PositionModel(models.Model):
         verbose_name_plural = u'Справочники "Должности"'
 
     def __unicode__(self):
-        return "{}".format(self.name)
+        return u"{}".format(self.name)
 
 
 class MedicalSuppliesModel(models.Model):
@@ -30,7 +30,7 @@ class MedicalSuppliesModel(models.Model):
         verbose_name_plural = u'Справочники "Медицинские запасы"'
 
     def __unicode__(self):
-        return "{}".format(self.name)
+        return u"{}".format(self.name)
 
 
 class MainCureModel(models.Model):
@@ -44,7 +44,7 @@ class MainCureModel(models.Model):
         verbose_name_plural = u'Справочники "Основные средства"'
 
     def __unicode__(self):
-        return "{}".format(self.name)
+        return u"{}".format(self.name)
 
 
 class DrugsModel(models.Model):
@@ -62,4 +62,4 @@ class DrugsModel(models.Model):
         verbose_name_plural = u'Справочники "Лекартственные средства"'
 
     def __unicode__(self):
-        return "{}".format(self.commercial_name)
+        return u"{}".format(self.commercial_name)
