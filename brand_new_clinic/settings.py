@@ -130,8 +130,10 @@ USE_TZ = True
 
 # Update database configuration with $DATABASE_URL.
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+#database for Heroku
+#uncomment that for heroku deploy, pel'meshek
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 
 # Static files (CSS, JavaScript, Images)
