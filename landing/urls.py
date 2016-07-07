@@ -6,4 +6,4 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^$', views.landing, name='index'),
 ]
-urlpatterns += staticfiles_urlpatterns()
+
